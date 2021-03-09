@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface BrandCarRepo extends JpaRepository<BrandCar, Long> {
 
-    @Query("select p from BrandCar p left join fetch p.models")
+    @Query("select p from BrandCar p")
     List<BrandCar> findAllBrands(Pageable page);
 }

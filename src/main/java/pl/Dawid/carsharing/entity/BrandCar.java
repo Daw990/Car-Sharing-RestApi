@@ -18,9 +18,13 @@ public class BrandCar {
     private Long id;
     private String brand;
     private LocalDateTime created;
-
-    @OneToMany
-    @JoinColumn(name = "brandCarId")
+    /**
+     * updatable, insertable
+     * hibernate on update entiti want delete all "sub-entities" in this example
+     * its list of modelcar. To avoid this set updatable = false and insertable = false
+     */
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "brandCarId", updatable = false, insertable = false)
     private List<ModelCar> models;
 
 

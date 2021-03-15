@@ -1,6 +1,7 @@
 package pl.Dawid.carsharing.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class ModelCar {
 
     @Id
@@ -20,4 +22,9 @@ public class ModelCar {
     private Long brandCarId;
     private String model;
     private LocalDateTime created;
+
+
+    public ModelCar(String model){
+        this.model = model;
+    }
 }

@@ -1,15 +1,15 @@
 package pl.Dawid.carsharing.service;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import pl.Dawid.carsharing.controller.dto.BrandCarDto;
 import pl.Dawid.carsharing.entity.BrandCar;
+import pl.Dawid.carsharing.entity.CompanyCar;
 import pl.Dawid.carsharing.entity.ModelCar;
 import pl.Dawid.carsharing.repository.BrandCarRepo;
+import pl.Dawid.carsharing.repository.CompanyCarRepo;
 import pl.Dawid.carsharing.repository.ModelCarRepo;
 
 import javax.transaction.Transactional;
@@ -25,6 +25,7 @@ public class BrandCarService {
 
     private final ModelCarRepo modelCarRepo;
     private final BrandCarRepo brandCarRepo;
+    private final CompanyCarRepo companyCarRepo;
 
     public List<BrandCar> findAllBrandCars(int page, Sort.Direction sort) {
         return brandCarRepo.findAllBrands(
@@ -81,7 +82,7 @@ public class BrandCarService {
      * Transactional for spring to see only one transaction. we dont must write
      * brandCarRepo.save(brandCarResult) in return
      * hibernate has "dirty checking" its check all downloaded entities and
-     * when any entiti is updated hibernate save it in fly.
+     * when any entity is updated hibernate save it in fly.
      */
     @Transactional
     public BrandCar editBrandCar(BrandCar brandCar) {
@@ -100,5 +101,13 @@ public class BrandCarService {
 
     public void deleteById(long id) {
         brandCarRepo.deleteById(id);
+    }
+
+    public List<CompanyCar> findAllCompanyCars(int page, Sort.Direction sort) {
+        return companyCarRepo.findAllCompanyCars(
+                PageRequest.of(page, PAGE_SIZE,
+                        Sort.by(sort, "registrationNumber")
+                )
+        );
     }
 }

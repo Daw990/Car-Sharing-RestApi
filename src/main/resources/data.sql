@@ -30,3 +30,13 @@ insert into model_car (id, brand_car_id, model, created) values (25, 4, 'XC60', 
 insert into model_car (id, brand_car_id, model, created) values (26, 4, 'XC90', '2021-03-08T12:36:38.223386300');
 insert into model_car (id, brand_car_id, model, created) values (27, 4, 'S40', '2021-03-08T12:36:38.223386300');
 insert into model_car (id, brand_car_id, model, created) values (28, 4, 'S70', '2021-03-08T12:36:38.223386300');
+
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (1, 28, 4, 'GPU1345', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (2, 10, 2, 'GWE3234', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (3, 19, 3, 'WAW3114', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (4, 12, 2, 'KRA3004', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (5, 17, 3, 'GPU3994', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (6, 27, 4, 'GDA3224', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (7, 24, 4, 'GDY3234', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (8, 10, 2, 'GDA3934', false, false);
+insert into company_car (id, model_car_id, brand_car_id, registration_number, rented, available) values (9, 3, 1, 'GDY8884', false, false);

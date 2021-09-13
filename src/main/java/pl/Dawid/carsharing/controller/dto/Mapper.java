@@ -12,7 +12,7 @@ public class Mapper {
 
     public static List<BrandCarDto> mapToBrandCarDtos(List<BrandCar> allBrandCars) {
         return allBrandCars.stream()
-                .map(car -> mapToBrandCarDto(car))
+                .map(Mapper::mapToBrandCarDto)
                 .collect(Collectors.toList());
     }
 
